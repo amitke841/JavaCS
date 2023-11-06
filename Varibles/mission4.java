@@ -1,3 +1,4 @@
+package Varibles;
 import java.util.Scanner;
 
 public class mission4 {
@@ -8,8 +9,8 @@ public class mission4 {
         System.out.println("Enter Width of Yard: ");
         int width = sc.nextInt();
         System.out.println("The Area of the Yard is: " + (length * width) + "Sq. M.");
-        length = length - 2;
-        width = width - 2;
+        length = length - 1;
+        width = width - 1;
         System.out.println("The Area of the Yard for Grass is: " + (length * width) + "Sq. M.");
         sc.close();
     }
