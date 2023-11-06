@@ -15,5 +15,6 @@ public class M3 {
 
         System.out.println("Area of the trinangle: " + area);
         System.out.println("Hikef of the trinangle: " + Hikef);
+        reader.close();
     }
 }

@@ -12,5 +12,6 @@ public class M1 {
 
         System.out.println("Years: " + years);
         System.out.println("Days: " + days);
+        reader.close();
     }
 }
