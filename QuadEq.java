@@ -19,5 +19,6 @@ public class QuadEq {
         double x2 = uppart2 / (2 * a);
         System.out.println("X1 is: " + x1);
         System.out.println("X2 is: " + x2);
+        sc.close();
     }
 }
