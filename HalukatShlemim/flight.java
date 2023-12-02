@@ -10,8 +10,8 @@ public class flight {
         System.out.println("Enter Paris to New York flight time in minutes: ");
         int flightPtoN = sc.nextInt();
         
-        //12 hours is 1820 minutes
-        int flightTotal = flightTtoP + flightPtoN + 1820;
+        //12 hours is 720 minutes
+        int flightTotal = flightTtoP + flightPtoN + 720;
         int flightDays = flightTotal / 1440;
         int flightHours = (flightTotal % 1440) / 60;
         int flightMinutes = (flightTotal % 1440) % 60;
