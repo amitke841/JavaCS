@@ -13,5 +13,6 @@ public class Targil {
         int packsLeft = Packs % 50;
 
         System.out.println("Boxes: " + boxes + " Packs: " + packsLeft + " Buttons: " + buttonsLeft);
+        sc.close();
     }
 }
