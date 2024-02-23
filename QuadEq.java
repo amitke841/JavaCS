@@ -5,6 +5,7 @@ public class QuadEq {
         Scanner sc = new Scanner(System.in);
         int a, b, c;
         System.out.println("Enter A:");
+        System.out.println("Enter A:");
         a = sc.nextInt();
         System.out.println("Enter B:");
         b = sc.nextInt();

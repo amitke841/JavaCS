@@ -27,9 +27,20 @@ public class t2 {
                 }
             }
         } else { //c4>c3
-            if () {
-                
+            if (c4>c2) {
+                if (c4>c1) {
+                    big = c4;
+                } else { //c1>c4
+                    big = c1;
+                }
+            } else { //c2>c4
+                if (c2>c1) {
+                    big = c2;
+                } else { //c1>c2
+                    big = c1;
+                }
             }
         }
+        System.out.println("The biggest char is: " + big);
     }
 }
