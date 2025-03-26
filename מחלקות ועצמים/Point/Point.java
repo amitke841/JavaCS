@@ -42,10 +42,14 @@ public class Point {
         return "( " + this.x + " , " + this.y + " )";
     }
 
+    //ט.יציאה: הפעולה מקבלת נקודה
+    //ט.יציאה: הפעולה מחזירה את המרחק בין הנקודה הנוכחית לנקודה שהתקבלה
     public double distance(Point p) {
         return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
     }
 
+    //ט.כניסה: הפעולה מקבלת נקודה
+    //ט.יציאה: הפעולה מחזירה את נקודת האמצע ביו הנקודה הנוכחית לנקודה שהתקבלה
     public Point middle (Point p) {
         double xMid = (this.x + p.x)/2;
         double yMid = (this.y + p.y)/2;
