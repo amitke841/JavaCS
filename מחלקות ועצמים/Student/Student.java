@@ -16,7 +16,7 @@ public class Student
 
 	//פעולות בונות
 	// -------------------------------------------------------------------
-
+	//ט.כניסה: הפעולה בונה ומחזירה עצם סטודנט לפי ערכים
 	public Student(String name, String idnum, int math, 
                              int english, int language)
     {
@@ -27,7 +27,7 @@ public class Student
         this.language=language;
     }
 	
-	//ט.יציאה: הפעולה קולטת תכונות של סטודנט ובונה עצם
+	//ט.יציאה: הפעולה בונה ומחזירה עצם סטודנט לפי קלט
     public Student() {
         System.out.println("הקש שם");
         this.name = reader.next();
@@ -134,8 +134,7 @@ public class Student
 
     //ט.יציאה: הפעולה מחזירה מחרוזת המתארת את ממוצע הציונים של התלמיד
     public String comment() {
-        int avg = this.math + this.english + this.language;
-        avg = (int)(avg/3.0);
+        double avg = (this.math + this.english + this.language)/3.0;
         if (avg >= 90) {
             return "מצטיין";
         } else if (avg >= 75) {
