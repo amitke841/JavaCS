@@ -86,7 +86,7 @@ public class Movie {
     }
 
     //ט.כניסה: הפעולה מקבלת סרט
-    //ט.יציאה: הפעולה מחזירה נכון אם 2 הסרטים באותו אורך, אחרת מחזירה לא נכון
+    //ט.יציאה: הפעולה מחזירה האם אורך הסרט שהתקבל זהה לאורך הסרט הנוכחי
     public boolean isTheSameLength(Movie m) {
         if (this.minutes == m.minutes) {
             return true;
