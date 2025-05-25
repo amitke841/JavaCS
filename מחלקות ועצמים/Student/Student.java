@@ -9,22 +9,16 @@ public class Student
 	
 	private String name;// שם תלמיד
 	private String idNum;// מספר ת.ז
-	private int math;//ציון במתמטיקה
-	private int english;//ציון באנגלית
-	private int language;//ציון בלשון
+	private int[] grades = new int[7];//מערך ציונים
 	
 
 	//פעולות בונות
-	// -------------------------------------------------------------------
-	//ט.כניסה: הפעולה בונה ומחזירה עצם סטודנט לפי ערכים
-	public Student(String name, String idnum, int math, 
-                             int english, int language)
+	//ט.יציאה: הפעולה בונה ומחזירה עצם סטודנט לפי ערכים
+	public Student(String name, String idnum, int[] grades)
     {
 		this.name=name;
         this.idNum= idnum;
-        this.math=math;
-        this.english=english;
-        this.language=language;
+        this.grades = grades;
     }
 	
 	//ט.יציאה: הפעולה בונה ומחזירה עצם סטודנט לפי קלט
@@ -33,12 +27,10 @@ public class Student
         this.name = reader.next();
         System.out.println("הקש תז");
         this.idNum = reader.next();
-        System.out.println("הקש ציון במתמטיקה");
-        this.math = reader.nextInt();
-        System.out.println("הקש ציון באנגלית");
-        this.english = reader.nextInt();
-        System.out.println("הקש ציון בלשון");
-        this.language = reader.nextInt();
+		System.out.println("הקש 7 ציונים:");
+		for (int i = 0; i < this.grades.length; i++) {
+			this.grades[i] = reader.nextInt();
+		}
     }
 
 	//פעולות מאחזרות
@@ -54,26 +46,18 @@ public class Student
 		return this.idNum;
 	}
 
-	// ט.יציאה:הפעולה מחזירה את הציון במתמטיקה של התלמיד
-	public int getMath()
-	{
-		return this.math;
+	// ט.יציאה:הפעולה מחזירה את מערך הציונים של התלמיד
+	public int[] getGrades() {
+		return this.grades;
 	}
 
-	// ט.יציאה:הפעולה מחזירה את הציון באנגלית של התלמיד
-	public int getEnglish()
-	{
-		return this.english;
-	}
-
-	// ט.יציאה:הפעולה מחזירה את הציון בלשון של התלמיד
-	public int getLanguage()
-	{
-		return this.language;
+	//ט.כניסה: הפעולה מקבלת מספר מקצוע
+	//ט.יציאה: הפעולה מחזירה את הציון של התלמיד במספר המקצוע שהתקבל
+	public int getSpecificGrade(int num) {
+		return this.grades[num];
 	}
 
 	//פעולות קובעות
-	// -------------------------------------------------------------------
 	// ט.כניסה:הפעולה מקבלת שם תלמיד
 	// ט.יציאה:הפעולה קובעת את שם התלמיד להיות השם שהתקבל
 	public void setName(String name)
@@ -88,25 +72,16 @@ public class Student
 		this.idNum = idNum;
 	}
 
-	// ט.כניסה:הפעולה מקבלת ציון במתמטיקה
-	// ט.יציאה:הפעולה קובעת את הציון במתמטיקה להיות הציון שהתקבל
-	public void setMath(int math)
-	{
-		this.math = math;
+	// ט.כניסה:הפעולה מקבלת מערך ציונים חדש
+	// ט.יציאה:הפעולה קובעת את מערך הציונים הקיים למערך שהתקבל
+	public void setGradesArr(int[] newGrades) {
+		this.grades = newGrades;
 	}
 
-	// ט.כניסה:הפעולה מקבלת ציון באנגלית
-	// ט.יציאה:הפעולה קובעת את הציון באנגלית להיות הציון שהתקבל
-	public void setEnglish(int english)
-	{
-		this.english = english;
-	}
-
-	// ט.כניסה:הפעולה מקבלת ציון בלשון
-	// ט.יציאה:הפעולה קובעת את הציון בלשון להיות הציון שהתקבל
-	public void setLanguage(int language)
-	{
-		this.language = language;
+	//ט.כניסה: הפעולה מקבלת מספר מקצוע וציון
+	//ט.יציאה: הפעולה קובעת את הציון במספר המקצוע שהתקבל לציון שהתקבל
+	public void setSpecificGrade(int num, int grade) {
+		this.grades[num] = grade;
 	}
 
 	//פעולות חישוביות
@@ -114,27 +89,28 @@ public class Student
 	// ט.יציאה:הפעולה מחזירה מחרוזת המתארת את התלמיד
 	public String toString()
 	{
-		return "name: " + this.name + " ID:" + this.idNum + " English grade: " + this.english + "Language grade:"
-				+ this.language + " Math grade: " + this.math;
+		String str = "name: " + this.name + " ID:" + this.idNum + "\n" + "the grades are: " + "\n";
+		for (int i = 0; i < this.grades.length; i++) {
+			str += i+ ": " + this.grades[i] + " ";
+		}
+		
+		return str;
 	}
 
-    //ט.כניסה: הפעולה מקבלת שם מקצוע ואחוז
+    //ט.כניסה: הפעולה מקבלת מספר מקצוע ואחוז
     //ט.יציאה: הפעולה מעלה את הציון במקצוע שהתקבל באחוז שהתקבל 
-    public void giveBonus(String subject, double precent) {
-        if (subject.equals("math")) {
-            this.math = this.math * (int)((precent+100)/100);
-        }
-        if (subject.equals("english")) {
-            this.english = this.english * (int)((precent+100)/100);
-        }
-        if (subject.equals("language")) {
-            this.language = this.language * (int)((precent+100)/100);
-        }
+    public void giveBonus(int subject, double precent) {
+		this.grades[subject] = this.grades[subject] * (int)((precent+100)/100);
     }
 
     //ט.יציאה: הפעולה מחזירה מחרוזת המתארת את ממוצע הציונים של התלמיד
     public String comment() {
-        double avg = (this.math + this.english + this.language)/3.0;
+        double avg = 0;
+		for (int i = 0; i < this.grades.length; i++) {
+			avg += this.grades[i];
+		}
+		avg = avg/this.grades.length;
+
         if (avg >= 90) {
             return "מצטיין";
         } else if (avg >= 75) {
