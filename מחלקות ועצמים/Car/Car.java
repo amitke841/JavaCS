@@ -36,27 +36,27 @@ public class Car {
     /*פעולות מאחזרות */
     //ט.יציאה: הפעולה מחזירה את מחיר הרכב
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     //ט.יציאה: הפעולה מחזירה את מספר המקומות ברכב
     public int getSeats() {
-        return seats;
+        return this.seats;
     }
 
     //ט.יציאה: הפעולה מחזירה האם הרכב חשמלי או לא
     public boolean getIsElectric() {
-        return isElectric;
+        return this.isElectric;
     }
 
     //ט.יציאה: הפעולה מחזירה את הקילומטרים החודשיים של הרכב
     public int[] getKmMonthly() {
-        return kmMonthly;
+        return this.kmMonthly;
     }
 
     //ט.יציאה: הפעולה מחזירה את הקילומטרים החודשיים של הרכב לחודש מסוים
     public int getSpecificMonthKm(int month) {
-        return kmMonthly[month];
+        return this.kmMonthly[month];
     }
 
     /*פעולות קובעות */
