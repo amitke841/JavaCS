@@ -93,4 +93,10 @@ public class Kindergarten {
         return false;
     }
 
+    //ט.כניסה: הפעולה מקבלת גן ילדים
+    //ט.יציאה: הפעולה מחזירה האם מספר הילדים בגן הילדים שווה למספר הילדים בגן ילדים אחר
+    public boolean equalsKids(Kindergarten k) {
+        return this.current == k.current;
+    }
+
 }
