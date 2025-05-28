@@ -60,15 +60,15 @@ public class Kindergarten {
     //ט.יציאה: הפעולה מסירה את הילד מהמערך השמות של הילדים
     public void removeKid(String name) {
         int removeI = 0;
-        for (int i = 0; i < this.arrayNames.length; i++) {
+        for (int i = 0; i < this.current; i++) {
             if (this.arrayNames[i].equals(name)) {
                 removeI = i;
             }
        }
-       for(int i = removeI; i < this.arrayNames.length - 1; i++) {
+       for(int i = removeI; i < this.current - 1; i++) {
             this.arrayNames[i] = this.arrayNames[i + 1];
         }
-        this.arrayNames[this.arrayNames.length - 1] = null;
+        this.arrayNames[this.current - 1] = null;
         this.current--;
     }
 
