@@ -52,7 +52,7 @@ public class Kindergarten {
     //ט.כניסה: הפעולה מקבלת שם של ילד
     //ט.יציאה: הפעולה מוסיפה את הילד למערך השמות של הילדים
     public void addKid(String name) {
-        this.arrayNames[this.current + 1] = name;
+        this.arrayNames[this.current] = name;
         this.current++;
     }
 
@@ -60,15 +60,17 @@ public class Kindergarten {
     //ט.יציאה: הפעולה מסירה את הילד מהמערך השמות של הילדים
     public void removeKid(String name) {
         int removeI = 0;
-        for (int i = 0; i < this.arrayNames.length; i++) {
+        boolean found = false;
+        for (int i = 0; i < this.current && !found; i++) {
             if (this.arrayNames[i].equals(name)) {
                 removeI = i;
+                found = true;
             }
        }
-       for(int i = removeI; i < this.arrayNames.length - 1; i++) {
+       for(int i = removeI; i < this.current - 1; i++) {
             this.arrayNames[i] = this.arrayNames[i + 1];
         }
-        this.arrayNames[this.arrayNames.length - 1] = null;
+        this.arrayNames[this.current - 1] = null;
         this.current--;
     }
 
