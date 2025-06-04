@@ -20,7 +20,7 @@ public class testKindergarten {
             System.out.println("enter 1 for kid Kelet, 2 for kid Remove, 0 for stop");
             num = reader.nextInt();
         }
-        System.out.println("Current kids in kindergarten: " + k.current);
+        System.out.println("Current kids in kindergarten: " + k.getCurrent);
         System.out.println("Enter kid name to check if hes in kindergarten");
         String nameToCheck = reader.next();
         if(k.isKidInKindergarten(nameToCheck)) {
