@@ -51,7 +51,7 @@ public class Kindergarten {
     //ט.כניסה: הפעולה מקבלת שם של ילד
     //ט.יציאה: הפעולה מוסיפה את הילד למערך השמות של הילדים
     public void addKid(String name) {
-        this.arrayNames[this.current + 1] = name;
+        this.arrayNames[this.current] = name;
         this.current++;
     }
 
