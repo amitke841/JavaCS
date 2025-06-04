@@ -2,7 +2,7 @@
 public class Kindergarten {
     private String name;
     private String kind;
-    private String[] arrayNames = new String[15];;
+    private String[] arrayNames;
     private int current;
 
     /* פעולות בונות */
@@ -10,6 +10,7 @@ public class Kindergarten {
     public Kindergarten(String name, String kind) {
         this.name = name;
         this.kind = kind;
+        this.arrayNames = new String[15];
         this.current = 0;
     }
 
