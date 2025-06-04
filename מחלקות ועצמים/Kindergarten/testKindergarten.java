@@ -8,9 +8,13 @@ public class testKindergarten {
         int num = reader.nextInt();
         while(num!=0) {
             if(num==1) {
-                System.out.println("enter kid name to add");
-                String name = reader.next();
-                k.addKid(name);
+                if(!k.isFull()) {
+                    System.out.println("enter kid name to add");
+                    String name = reader.next();
+                    k.addKid(name);
+                } else {
+                    System.out.println("The kindergarden is full.");
+                }
             } else if(num==2) {
                 System.out.println("enter kid name to remove");
                 String name = reader.next();
