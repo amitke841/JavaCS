@@ -20,6 +20,15 @@ public class Song
         this.length = length;
     }
 
+    public Song() {
+        System.out.println("Enter name for song:");
+        this.name = reader.next();
+        System.out.println("enter performer: ");
+        this.performer = reader.next();
+        System.out.println("Enter length: ");
+        this.length = reader.nextInt();
+    }
+
 	
     /* פעולות מאחזרות**/  
     //ט.יציאה: הפעולה מאחזרת את שם השיר
