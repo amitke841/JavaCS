@@ -72,4 +72,28 @@ public class Disk {
     public double averageSongLength() {
         return this.diskLength()/this.playlist.length;
     }
+    
+    public int maxSongLength() {
+    	int max=0;
+    	Song s1;
+    	for(int i=0;i<this.songs.length;i++)
+    	{
+    		s1=songs[i];
+    		if(s1.getLength()>max)
+    			max=s1.getLength();
+    	}
+    	return max;
+    }
+    public String nameOfLongetsSongs() {
+    	 int max = this.maxSongLength();
+    	 Song s1;
+    	 String name = songs[0].getName();
+    	 for(int i=0;i<songs.length;i++)
+    	 {
+    		 s1=this.songs[i];
+    		 if(s1.getLength() == max)
+    			 name = s1.getName();
+    	 }
+    	 return name;
+    }
 }
