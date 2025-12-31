@@ -59,6 +59,16 @@ public class buildNode {
 		return newN;
 	}
 
+	public static Node<Integer> buildReverseNodeOrit(Node<Integer> n) {
+		Node<Integer> newN = null, current;
+		while(n! = null) {
+			current = new Node<Integer>(n.getValue(), newN)
+			newN = current;
+			n = n.getNext();
+		}
+		return newN;
+	}
+
 	public static void main(String[] args) {
 		Node<Integer> list = new Node<Integer>(1,new Node<Integer>(2,new Node<Integer>(3,new Node<Integer>(4))));
 		System.out.println(buildReverseNode(list));
