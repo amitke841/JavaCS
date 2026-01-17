@@ -1,6 +1,6 @@
 package Node;
 
-public class addNodes {
+public class addRemoveNodes {
     public static int maxDigit(int num) {
         int max = 0;
         int d;
@@ -48,10 +48,36 @@ public class addNodes {
         }
     }
 
+    public static Node<Integer> evenOddSort(Node<Integer> n) {
+        Node<Integer> delete, oddsSave, nSave;
+        Node<Integer> odds = new Node<Integer>(1);
+        Node<Integer> demi = new Node<Integer>(2,n);
+        Node<Integer> lastEven = n;
+        n = demi;
+        oddsSave = odds;
+        nSave = n;
+        
+        while(n != null && n.hasNext()) {
+            if(n.getNext().getValue()%2 == 1) {
+                odds.setNext(new Node<Integer>(n.getNext().getValue()));
+                odds = odds.getNext();
+                delete = n.getNext();
+                n.setNext(delete.getNext());
+                delete.setNext(null);
+            } else lastEven = n.getNext();
+            n = n.getNext();
+        }
+
+        if(n == null) {
+            lastEven.setNext(oddsSave.getNext());
+        } else n.setNext(oddsSave.getNext());
+
+        return nSave.getNext();
+    }
+
     public static void main(String[] args) {
-        Node<Integer> test = new Node<Integer>(123, new Node<Integer>(961));
-        System.out.println(test.toString());
-        MaxMinNode(test);
+        Node<Integer> test = new Node<Integer>(123, new Node<Integer>(960, new Node<Integer>(4, new Node<Integer>(5))));
+        test = evenOddSort(test);
         System.out.println(test.toString());
     }
 }
