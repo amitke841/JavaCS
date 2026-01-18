@@ -75,6 +75,17 @@ public class addRemoveNodes {
         return nSave.getNext();
     }
 
+	public static void shortSeq(Node<Integer> n) {
+		Node<Integer> nAfter;
+		while (n != null && n.hasNext()) {
+			nAfter = n.getNext();
+			if(n.getValue() == n.getValue()) {
+				n.setNext(nAfter.getNext());
+				nAfter.setNext(null);
+			} else n = n.getNext();
+		}
+	}
+
     public static void main(String[] args) {
         Node<Integer> test = new Node<Integer>(123, new Node<Integer>(960, new Node<Integer>(4, new Node<Integer>(5))));
         test = evenOddSort(test);
