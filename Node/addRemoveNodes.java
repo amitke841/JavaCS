@@ -75,6 +75,22 @@ public class addRemoveNodes {
         return nSave.getNext();
     }
 
+	public static Node<Integer> evenOddSortBetter(Node<Integer> n) { //moving even to start instead if odd to end
+		Node<Integer> nAfter, demi;
+		demi = new Node<Integer>(1,n);
+		n = demi;
+		while(n != null && n.hasNext()) {
+			nAfter = n.getNext();
+			if(nAfter.getValue()%2 == 0) {
+				n.setNext(nAfter.getNext());
+				nAfter.setNext(null); //Classic Delete
+				nAfter.setNext(demi.getNext());
+				demi.setNext(nAfter);// Connectin
+			} else n.getNext();
+		}
+		return demi.getNext();
+	}
+
 	public static void shortSeq(Node<Integer> n) {
 		Node<Integer> nAfter;
 		while (n != null && n.hasNext()) {
