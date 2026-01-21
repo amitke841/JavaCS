@@ -126,9 +126,8 @@ public class addRemoveNodes {
 	}
 
 	public static void deleteMaxNums(Node<Integer> n, int num) {
-		while(num!=0) {
+		for(int i=0;i<num;i++) {
 			n = deleteMax(n);
-			num--;
 		}
 	}
 	
