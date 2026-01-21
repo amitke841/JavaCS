@@ -102,6 +102,36 @@ public class addRemoveNodes {
 		}
 	}
 
+	public static Node<Integer> deleteMax(Node<Integer> n) {
+		Node<Integer> demi, nAfter,nBefore, maxNode;
+		int max = n.getValue();
+		maxNode = n;
+		demi = new Node<Integer>(8, n);
+		n = demi;
+		nBefore = demi;
+
+		while(n!=null && n.hasNext()) {
+			nAfter = n.getNext();
+			if(nAfter.getValue() > max) {
+				max = nAfter.getValue();
+				maxNode = nAfter;
+				nBefore = n;
+			}
+			n = n.getNext();
+		}
+
+		nBefore.setNext(maxNode.getNext());
+		maxNode.setNext(null);
+		return demi.getNext();
+	}
+
+	public static void deleteMaxNums(Node<Integer> n, int num) {
+		while(num!=0) {
+			n = deleteMax(n);
+			num--;
+		}
+	}
+	
     public static void main(String[] args) {
         Node<Integer> test = new Node<Integer>(123, new Node<Integer>(960, new Node<Integer>(4, new Node<Integer>(5))));
         test = evenOddSort(test);
